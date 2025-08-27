@@ -15,8 +15,8 @@ const Footer = () => {
               <span className={styles.logoTitle}>EcoEnergy</span>
             </div>
             <p className={styles.description}>
-              Converting waste to energy for a sustainable future. Join our community in making a positive environmental
-              impact.
+              Converting waste to energy for a sustainable future. Join our
+              community in making a positive environmental impact.
             </p>
           </div>
 
@@ -24,9 +24,11 @@ const Footer = () => {
           <div>
             <h3 className={styles.sectionTitle}>Contact Us</h3>
             <div className={styles.contactList}>
-              <p className={styles.contactItem}>📧 info@ecoenergy.com</p>
-              <p className={styles.contactItem}>📞 +1 (555) 123-4567</p>
-              <p className={styles.contactItem}>📍 123 Green Street, Eco City, EC 12345</p>
+              <p className={styles.contactItem}>
+                📧 elhanyasir_admin@ecoenergy.com
+              </p>
+              <p className={styles.contactItem}>📞 +91 91342 14397</p>
+              <p className={styles.contactItem}>📍 Station Road, Asansol</p>
             </div>
           </div>
 
@@ -51,7 +53,10 @@ const Footer = () => {
         </div>
 
         <div className={styles.bottomSection}>
-          <p className={styles.copyright}>© 2024 EcoEnergy. All rights reserved. Built for a sustainable future.</p>
+          <p className={styles.copyright}>
+            © 2025 EcoEnergy. All rights reserved. Built for a sustainable
+            future.
+          </p>
         </div>
       </div>
     </footer>
