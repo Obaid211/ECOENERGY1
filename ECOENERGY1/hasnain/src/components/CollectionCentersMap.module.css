@@ -1,0 +1,162 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .mapPlaceholder {
+    background: var(--color-muted);
+    border-radius: 0.5rem;
+    height: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+  }
+  
+  .mapContent {
+    text-align: center;
+  }
+  
+  .mapIcon {
+    width: 4rem;
+    height: 4rem;
+    background: rgba(22, 163, 74, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 2rem;
+    color: var(--color-primary);
+  }
+  
+  .mapContent p:first-of-type {
+    color: var(--color-muted-foreground);
+    font-size: 0.875rem;
+  }
+  
+  .mapContent p:last-of-type {
+    color: var(--color-muted-foreground);
+    font-size: 0.75rem;
+  }
+  
+  .centersList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .centersTitle {
+    font-weight: 500;
+    color: var(--color-foreground);
+  }
+  
+  .centerCard {
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .centerCard:hover {
+    background: rgba(107, 114, 128, 0.05);
+  }
+  
+  .centerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .centerInfo {
+    flex: 1;
+  }
+  
+  .centerName {
+    font-weight: 500;
+    color: var(--color-foreground);
+  }
+  
+  .centerAddress {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+  }
+  
+  .centerMeta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .statusActive {
+    color: var(--color-chart-1);
+  }
+  
+  .statusMaintenance {
+    color: var(--color-chart-3);
+  }
+  
+  .statusDefault {
+    color: var(--color-muted-foreground);
+  }
+  
+  .centerMeta span {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .capacityInfo {
+    text-align: right;
+  }
+  
+  .capacityNumbers {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+  }
+  
+  .capacityLabel {
+    font-size: 0.75rem;
+    color: var(--color-muted-foreground);
+  }
+  
+  .centerDetails {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .detailsGrid span:first-child {
+    color: var(--color-muted-foreground);
+  }
+  
+  .detailsGrid span:last-child {
+    margin-left: 0.5rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+  }
+  
+  .directionsButton {
+    margin-top: 0.75rem;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .directionsButton:hover {
+    color: rgba(22, 163, 74, 0.8);
+  }
+  
