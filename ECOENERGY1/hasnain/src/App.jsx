@@ -5,6 +5,7 @@ import AboutPage from "./pages/AboutPage";
 import AdminPage from "./pages/AdminPage";
 import CitizenPage from "./pages/CitizenPage";
 import "./styles/global.css";
+import RedeemSection from "./pages/RedeemSection";
 
 const App = () => {
   
@@ -29,6 +30,10 @@ const App = () => {
       path: "/admin",
       element: <AdminPage />,
     },
+    {
+      path: "/redeem",
+      element:<RedeemSection/>
+    }
   ]);
   return <RouterProvider router={router} />;
 };
