@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./RegistrationForm.module.css";
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { app } from "../firebase";
 
 const RegistrationForm = ({ onRegister }) => {
@@ -19,6 +19,11 @@ const RegistrationForm = ({ onRegister }) => {
       const auth = getAuth(app);
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       
+      // Update the user's display name in Firebase
+      await updateProfile(userCredential.user, {
+        displayName: name
+      });
+      
       // Create user object with all necessary data
       const newUser = {
         id: userCredential.user.uid, // Use Firebase UID
@@ -31,14 +36,47 @@ const RegistrationForm = ({ onRegister }) => {
         firebaseUser: userCredential.user
       };
 
+      // Save user data to localStorage for future reference
+      const savedUsers = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
+      const existingUserIndex = savedUsers.findIndex(user => user.email === email);
+      
+      if (existingUserIndex >= 0) {
+        savedUsers[existingUserIndex] = newUser;
+      } else {
+        savedUsers.push(newUser);
+      }
+      
+      localStorage.setItem("registeredUsers", JSON.stringify(savedUsers));
+
       console.log('User registered successfully:', newUser);
       
       // Call onRegister to update the parent component
-      onRegister(newUser);
+      onRegister(newUser, 'signup');
       
     } catch (error) {
       console.error('Registration error:', error);
-      setError(error.message);
+      
+      // Provide user-friendly error messages
+      let errorMessage = "Registration failed. Please try again.";
+      
+      switch (error.code) {
+        case 'auth/email-already-in-use':
+          errorMessage = "This email address is already registered. Please use a different email or try signing in.";
+          break;
+        case 'auth/invalid-email':
+          errorMessage = "Please enter a valid email address.";
+          break;
+        case 'auth/weak-password':
+          errorMessage = "Password should be at least 6 characters long.";
+          break;
+        case 'auth/operation-not-allowed':
+          errorMessage = "Email/password accounts are not enabled. Please contact support.";
+          break;
+        default:
+          errorMessage = error.message;
+      }
+      
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
