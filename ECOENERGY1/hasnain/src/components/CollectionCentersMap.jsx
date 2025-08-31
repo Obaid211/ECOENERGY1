@@ -8,7 +8,7 @@ const CollectionCentersMap = () => {
   const [error, setError] = useState(null);
 
   // Google Maps API key
-  // const API_KEY = "AIzaSyCZmb9zd1-H2eDXvuQbii4atu0-2Ok1C8o";
+  const API_KEY = "AIzaSyCZmb9zd1-H2eDXvuQbii4atu0-2Ok1C8o";
   
   // Asansol, West Bengal coordinates
   const asansolCenter = {
