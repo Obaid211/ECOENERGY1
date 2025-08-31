@@ -22,7 +22,7 @@ const LoginForm = ({ onLogin }) => {
       const savedUsers = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
       let userData = savedUsers.find(user => user.email === email);
       
-      // If no local data found, create basic user object
+      // If no local data found, create basic user object using Firebase data
       if (!userData) {
         userData = {
           id: userCredential.user.uid,
@@ -34,15 +34,31 @@ const LoginForm = ({ onLogin }) => {
           joinDate: new Date().toISOString().split("T")[0],
           firebaseUser: userCredential.user
         };
+        
+        // Save this user data for future logins
+        savedUsers.push(userData);
+        localStorage.setItem("registeredUsers", JSON.stringify(savedUsers));
       } else {
-        // Update with current Firebase user data
-        userData.firebaseUser = userCredential.user;
+        // Update with current Firebase user data while preserving the saved name
+        userData = {
+          ...userData,
+          firebaseUser: userCredential.user,
+          // Keep the original name from registration if it exists
+          name: userData.name || userCredential.user.displayName
+        };
+        
+        // Update the saved user data
+        const userIndex = savedUsers.findIndex(user => user.email === email);
+        if (userIndex >= 0) {
+          savedUsers[userIndex] = userData;
+          localStorage.setItem("registeredUsers", JSON.stringify(savedUsers));
+        }
       }
 
       console.log('User logged in successfully:', userData);
       
       // Call onLogin to update the parent component
-      onLogin(userData);
+      onLogin(userData, 'signin');
       
     } catch (error) {
       console.error('Login error:', error);
@@ -65,6 +81,9 @@ const LoginForm = ({ onLogin }) => {
           break;
         case 'auth/user-disabled':
           errorMessage = "This account has been disabled. Please contact support.";
+          break;
+        case 'auth/invalid-credential':
+          errorMessage = "Invalid email or password. Please check your credentials.";
           break;
         default:
           errorMessage = error.message;

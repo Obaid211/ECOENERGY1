@@ -43,9 +43,9 @@ const CitizenDashboard = ({ user, onLogout, loginType }) => {
   // Determine welcome message based on login type
   const getWelcomeMessage = () => {
     if (loginType === 'signup') {
-      return `Welcome, ${user.name}!`;
+      return `Welcome, ${user.name} !`;
     } else {
-      return `Welcome back, ${user.name}!`;
+      return `Welcome back, ${user.name} !`;
     }
   };
 
