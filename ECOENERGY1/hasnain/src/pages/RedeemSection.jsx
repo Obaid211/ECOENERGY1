@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 
 
-
 const RedeemSection = () => {
   const [ecoPoints, setEcoPoints] = useState(650); // Starting with 150 points
   const [message, setMessage] = useState('');
