@@ -122,7 +122,7 @@ const AdminOverview = () => {
       <div className={styles.activityCard}>
         <h2 className={styles.activityTitle}>Recent Activity</h2>
         <div className={styles.activityList}>
-          {dummyData.wasteEntries.slice(0, 5).map((entry) => {
+          {dummyData.wasteEntries.slice(0, 3).map((entry) => {
             const citizen = dummyData.citizens.find((c) => c.id === entry.citizenId);
             return (
               <div key={entry.id} className={styles.activityItem}>
