@@ -2,8 +2,8 @@
     "citizens": [
       {
         "id": 1,
-        "name": "John Doe",
-        "email": "john@example.com",
+        "name": "Riya Sharma",
+        "email": "riya@example.com",
         "ecoPoints": 245,
         "totalWetWaste": 45.5,
         "totalPlasticWaste": 23,
@@ -11,8 +11,8 @@
       },
       {
         "id": 2,
-        "name": "Sarah Johnson",
-        "email": "sarah@example.com",
+        "name": "Arun Kumar",
+        "email": "arun@example.com",
         "ecoPoints": 189,
         "totalWetWaste": 38.2,
         "totalPlasticWaste": 19,
@@ -20,8 +20,8 @@
       },
       {
         "id": 3,
-        "name": "Mike Chen",
-        "email": "mike@example.com",
+        "name": "Priya Kumari",
+        "email": "Priya@example.com",
         "ecoPoints": 312,
         "totalWetWaste": 62.1,
         "totalPlasticWaste": 31,
@@ -29,8 +29,8 @@
       },
       {
         "id": 4,
-        "name": "Emily Rodriguez",
-        "email": "emily@example.com",
+        "name": "Ayush Sinha",
+        "email": "ayush@example.com",
         "ecoPoints": 156,
         "totalWetWaste": 28.7,
         "totalPlasticWaste": 15,
@@ -38,7 +38,7 @@
       },
       {
         "id": 5,
-        "name": "David Kim",
+        "name": "Rohit Rai",
         "email": "david@example.com",
         "ecoPoints": 203,
         "totalWetWaste": 41.3,

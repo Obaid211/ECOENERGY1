@@ -5,8 +5,8 @@ const PickupManagement = () => {
   const [pickups, setPickups] = useState([
     {
       id: 1,
-      citizenName: "John Doe",
-      address: "123 Green Street, Eco City",
+      citizenName: "Mohit Sharma",
+      address: "45, Lake View Residency, T. Nagar, Chennai, Tamil Nadu – 600017",
       wasteType: "Mixed Waste",
       amount: "15kg",
       status: "pending",
@@ -14,8 +14,8 @@ const PickupManagement = () => {
     },
     {
       id: 2,
-      citizenName: "Sarah Johnson",
-      address: "456 Recycle Ave, Green Valley",
+      citizenName: "Harsh Kumar",
+      address: "Flat 302, Sunrise Apartments, Andheri West, Mumbai, Maharashtra – 400053",
       wasteType: "Plastic Only",
       amount: "50 items",
       status: "scheduled",
@@ -24,8 +24,8 @@ const PickupManagement = () => {
     },
     {
       id: 3,
-      citizenName: "Mike Chen",
-      address: "789 Eco Boulevard, Riverside",
+      citizenName: "Rohit Verma",
+      address: "12, Patel Nagar, Civil Lines, Jaipur, Rajasthan – 302006",
       wasteType: "Organic Waste",
       amount: "8kg",
       status: "completed",
