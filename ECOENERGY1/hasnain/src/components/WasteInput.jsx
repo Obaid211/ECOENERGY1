@@ -12,7 +12,7 @@ const WasteInput = () => {
     const db = getDatabase(app);
     const testRef = ref(db, 'test');
     
-    // Listen to databas changes
+    // Listen to database changes
     const unsubscribe = onValue(testRef, (snapshot) => {
       const data = snapshot.val();
       console.log('Raw database data:', data);
